@@ -9,3 +9,9 @@
         margin-left: 19px;
     }
 }
+
+@media screen and (max-width: 426px) {
+    .page__conteiner{
+        margin: 0;
+    }
+}
