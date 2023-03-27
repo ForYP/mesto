@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="page">
+  <div class="page__conteiner">
+    <header class="header">
+      <img class="header__logo" src="./images/logo-mesto.svg" alt="логотип">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__main">
+          <img src="./images/avatar.png" alt="аватар" class="profile__avatar">
+          <div class="profile__info">
+            <div class="profile__united">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button type="button" class="profile__edit-button"></button>
+            </div>
+            <p class="profile__status">Исследователь океана</p>
+          </div>
+        </div>
+        <button type="button" class="profile__add-button"></button>
+      </section>
+      <section class="elements">
+        <div class="element">
+          <img src="./images/kusto.jpg" alt="Команда Кусто" class="element__photo">
+          <div class="element__description">
+            <h3 class="element__title">Команда Кусто</h3>
+            <button class="element__like"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img src="./images/team.jpg" alt="Друзья" class="element__photo">
+          <div class="element__description">
+            <h3 class="element__title">С сыновьями</h3>
+            <button class="element__like"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img src="./images/calypso.jpg" alt="Калипсо" class="element__photo">
+          <div class="element__description">
+            <h3 class="element__title"><q>Калипсо</q></h3>
+            <button class="element__like"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img src="./images/in_touch.jpg" alt="На связи" class="element__photo">
+          <div class="element__description">
+            <h3 class="element__title">На связи</h3>
+            <button class="element__like"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img src="./images/underwater_odyssey.jpg" alt="Подводная одиссея" class="element__photo">
+          <div class="element__description">
+            <h3 class="element__title">Подводная одиссея</h3>
+            <button class="element__like"></button>
+          </div>
+        </div>
+        <div class="element">
+          <img src="./images/scuba_gear.jpg" alt="в акваланге" class="element__photo">
+          <div class="element__description">
+            <h3 class="element__title">В акваланге</h3>
+            <button class="element__like"></button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+    </footer>
+  </div>
+  <div class="popup">
+    <div class="popup__container">
+      <button class="popup__close"></button>
+      <div class="popup__form">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input type="text" class="popup__input-name">
+        <input type="text" class="popup__input-status">
+        <button class="popup__input-save">Сохранить</button>
+      </div>
+    </div>
+  </div>
+  <script defer src="index.js"></script>
+</body>
+
+</html>
