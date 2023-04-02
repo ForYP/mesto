@@ -7,7 +7,16 @@
     border: none;
     cursor: pointer;
     transition: 0.6s;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
 }
 .popup__input-save:hover{
     opacity: 0.8;
+}
+@media screen and (max-width: 540px) {
+   .popup__input-save{
+        font-size: 14px;
+        line-height: 17px;
+    } 
 }

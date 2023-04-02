@@ -1,10 +1,22 @@
 .popup{
-    color: #000;
+    visibility: hidden;
+    opacity: 0;
     position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    background: rgb(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 540px) {
+    .popup{
+        top: -67px;
+    }
 }

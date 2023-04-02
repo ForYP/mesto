@@ -29,48 +29,48 @@
         <button type="button" class="profile__add-button"></button>
       </section>
       <section class="elements">
-        <div class="element">
+        <article class="element">
           <img src="./images/kusto.jpg" alt="Команда Кусто" class="element__photo">
           <div class="element__description">
-            <h3 class="element__title">Команда Кусто</h3>
-            <button class="element__like"></button>
+            <h2 class="element__title">Команда Кусто</h2>
+            <button type="button" class="element__like"></button>
           </div>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
           <img src="./images/team.jpg" alt="Друзья" class="element__photo">
           <div class="element__description">
-            <h3 class="element__title">С сыновьями</h3>
-            <button class="element__like"></button>
+            <h2 class="element__title">С сыновьями</h2>
+            <button type="button" class="element__like"></button>
           </div>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
           <img src="./images/calypso.jpg" alt="Калипсо" class="element__photo">
           <div class="element__description">
-            <h3 class="element__title"><q>Калипсо</q></h3>
-            <button class="element__like"></button>
+            <h2 class="element__title"><q>Калипсо</q></h2>
+            <button type="button" class="element__like"></button>
           </div>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
           <img src="./images/in_touch.jpg" alt="На связи" class="element__photo">
           <div class="element__description">
-            <h3 class="element__title">На связи</h3>
-            <button class="element__like"></button>
+            <h2 class="element__title">На связи</h3>
+            <button type="button" class="element__like"></button>
           </div>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
           <img src="./images/underwater_odyssey.jpg" alt="Подводная одиссея" class="element__photo">
           <div class="element__description">
-            <h3 class="element__title">Подводная одиссея</h3>
-            <button class="element__like"></button>
+            <h2 class="element__title">Подводная одиссея</h2>
+            <button type="button" class="element__like"></button>
           </div>
-        </div>
-        <div class="element">
+        </article>
+        <article class="element">
           <img src="./images/scuba_gear.jpg" alt="в акваланге" class="element__photo">
           <div class="element__description">
-            <h3 class="element__title">В акваланге</h3>
-            <button class="element__like"></button>
+            <h2 class="element__title">В акваланге</h2>
+            <button type="button" class="element__like"></button>
           </div>
-        </div>
+        </article>
       </section>
     </main>
     <footer class="footer">
@@ -81,14 +81,14 @@
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form">
-        <input type="text" class="popup__input popup__input_name" placeholder="Имя">
-        <input type="text" class="popup__input popup__input_status" placeholder="О себе">
+      <form name="profileInfo" class="popup__form">
+        <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя">
+        <input type="text" name="status" class="popup__input popup__input_type_status" placeholder="О себе">
         <button type="submit" class="popup__input-save">Сохранить</button>
       </form>
     </div>
   </div>
-  <script defer src="index.js"></script>
+  <script defer src="./scripts/index.js"></script>
 </body>
 
 </html>
