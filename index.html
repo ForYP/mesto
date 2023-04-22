@@ -29,48 +29,16 @@
         <button type="button" class="profile__add-button"></button>
       </section>
       <section class="elements">
-        <article class="element">
-          <img src="./images/kusto.jpg" alt="Команда Кусто" class="element__photo">
-          <div class="element__description">
-            <h2 class="element__title">Команда Кусто</h2>
-            <button type="button" class="element__like"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img src="./images/team.jpg" alt="Друзья" class="element__photo">
-          <div class="element__description">
-            <h2 class="element__title">С сыновьями</h2>
-            <button type="button" class="element__like"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img src="./images/calypso.jpg" alt="Калипсо" class="element__photo">
-          <div class="element__description">
-            <h2 class="element__title">&laquo;Калипсо&raquo;</h2>
-            <button type="button" class="element__like"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img src="./images/in_touch.jpg" alt="На связи" class="element__photo">
-          <div class="element__description">
-            <h2 class="element__title">На связи</h2>
-            <button type="button" class="element__like"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img src="./images/underwater_odyssey.jpg" alt="Подводная одиссея" class="element__photo">
-          <div class="element__description">
-            <h2 class="element__title">Подводная одиссея</h2>
-            <button type="button" class="element__like"></button>
-          </div>
-        </article>
-        <article class="element">
-          <img src="./images/scuba_gear.jpg" alt="в акваланге" class="element__photo">
-          <div class="element__description">
-            <h2 class="element__title">В акваланге</h2>
-            <button type="button" class="element__like"></button>
-          </div>
-        </article>
+        <template id="card-template">
+          <article class="element">
+            <button class="element__del" type="button"></button>
+            <img src="" alt="изображение" class="element__photo">
+            <div class="element__description">
+              <h2 class="element__title"></h2>
+              <button type="button" class="element__like"></button>
+            </div>
+          </article>
+        </template>
       </section>
     </main>
     <footer class="footer">
@@ -86,6 +54,26 @@
         <input type="text" name="status" class="popup__input popup__input_type_status" placeholder="О себе">
         <button type="submit" class="popup__input-save">Сохранить</button>
       </form>
+    </div>
+  </div>
+  <div class="popup popup_card">
+    <div class="popup__container">
+      <button type="button" class="popup__close popup__close_card"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form name="profileInfo" class="popup__form popup__form_type_submit">
+        <input type="text" name="name" class="popup__input popup__input_type_title" placeholder="Название">
+        <input type="text" name="link" class="popup__input popup__input_type_link" placeholder="Ссылка на картинку">
+        <button type="submit" class="popup__input-save">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_card_photo">
+    <div class="popup__container-photo">
+      <button type="button" class="popup__close popup__close_card_photo"></button>
+      <figure class="popup__photo">
+        <img class="popup__img" src="" alt="">
+        <figcaption class="popup__figcaption"></figcaption>
+      </figure>
     </div>
   </div>
   <script defer src="./scripts/index.js"></script>

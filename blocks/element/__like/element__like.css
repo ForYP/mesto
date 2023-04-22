@@ -5,9 +5,13 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
     flex-shrink: 0;
 }
 .element__like:hover{
     opacity: 0.5;
+}
+.element__like_active{
+    background: url(../../../images/like_active.svg) center no-repeat;
+    opacity: 1;
 }
