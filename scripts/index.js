@@ -2,12 +2,12 @@ import initialCards from './content.js';
 
 const editButton = document.querySelector('.profile__edit-button');
 const editOpenPopup = document.querySelector('.popup_type_edit-profile');
-const editClosePopup = document.querySelector('.popup__close');
+const editClosePopup = document.querySelector('.popup__close_edit_profile');
 const inputName = document.querySelector('.popup__input_type_name');
 const inputStatus = document.querySelector('.popup__input_type_status');
 const profileName = document.querySelector('.profile__name');
 const profileStatus = document.querySelector('.profile__status');
-const editPopupForm = document.querySelector('.popup__form');
+const editPopupForm = document.querySelector('.popup__form_save_submit');
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
