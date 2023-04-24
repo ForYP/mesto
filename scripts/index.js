@@ -1,7 +1,8 @@
+import initialCards from './content.js';
+
 const editButton = document.querySelector('.profile__edit-button');
-const editOpenPopup = document.querySelector('.popup');
+const editOpenPopup = document.querySelector('.popup_type_edit-profile');
 const editClosePopup = document.querySelector('.popup__close');
-const btnSave = document.querySelector('.popup__input-save');
 const inputName = document.querySelector('.popup__input_type_name');
 const inputStatus = document.querySelector('.popup__input_type_status');
 const profileName = document.querySelector('.profile__name');
@@ -38,7 +39,7 @@ editPopupForm.addEventListener('submit', function(event) {
 // block card
 
 const profileAddCard = document.querySelector('.profile__add-button');
-const popupCard = document.querySelector('.popup_card');
+const popupCard = document.querySelector('.popup_type_add-card');
 profileAddCard.addEventListener('click', () => {
     openPopup(popupCard);
 });
@@ -47,33 +48,6 @@ const popupCloseCard = document.querySelector('.popup__close_card');
 popupCloseCard.addEventListener('click', () => {
     closePopup(popupCard);
 });
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
 const cardTemplate = document.getElementById('card-template');
 const cardElements = document.querySelector('.elements');
@@ -85,7 +59,7 @@ const createCardElement = (cardData) => {
   const cardName = cardElement.querySelector('.element__title');
   const cardImage = cardElement.querySelector('.element__photo');
 
-  cardName.innerHTML = cardData.name;
+  cardName.textContent = cardData.name;
   cardImage.src = cardData.link;
   cardImage.alt = cardData.name;
 
@@ -105,7 +79,7 @@ const createCardElement = (cardData) => {
     const popupImg = document.querySelector('.popup__img');
     const popupFigcaption = document.querySelector('.popup__figcaption');
     popupImg.src = cardData.link;
-    popupFigcaption.innerHTML = cardData.name;
+    popupFigcaption.textContent = cardData.name;
     openPopup(popupCardPhoto);
   });
   
@@ -113,8 +87,11 @@ const createCardElement = (cardData) => {
 };
 
 const renderCardElement = (cardElement) => {
-  cardElements.prepend(cardElement);
+  cardElements.append(cardElement);
 };
+const renderCardElementPrepend = (cardElement) => {
+  cardElements.prepend(cardElement);
+}
 
 initialCards.forEach((card) => {
   renderCardElement(createCardElement(card));
@@ -132,7 +109,7 @@ const handleEditCardSubmit = (event) => {
     name,
     link,
   };
-  renderCardElement(createCardElement(cardData));
+  renderCardElementPrepend(createCardElement(cardData));
   closePopup(popupCard);
 }
 
@@ -140,7 +117,7 @@ editCardForm.addEventListener('submit', handleEditCardSubmit);
 
 // block card photo
 
-const popupCardPhoto = document.querySelector('.popup_card_photo');
+const popupCardPhoto = document.querySelector('.popup_type_card-photo');
 const popupCloseCardPhoto = document.querySelector('.popup__close_card_photo');
 popupCloseCardPhoto.addEventListener('click', () => {
   closePopup(popupCardPhoto);

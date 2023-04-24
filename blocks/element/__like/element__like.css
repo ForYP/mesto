@@ -11,7 +11,8 @@
 .element__like:hover{
     opacity: 0.5;
 }
-.element__like_active{
-    background: url(../../../images/like_active.svg) center no-repeat;
-    opacity: 1;
-}
+/* @media (hover: hover){
+    button:hover{
+        opacity: 0.6;
+    }
+} */

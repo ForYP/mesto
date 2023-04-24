@@ -45,7 +45,7 @@
       <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup">
+  <div class="popup popup_type_edit-profile">
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
@@ -56,7 +56,7 @@
       </form>
     </div>
   </div>
-  <div class="popup popup_card">
+  <div class="popup popup_type_add-card">
     <div class="popup__container">
       <button type="button" class="popup__close popup__close_card"></button>
       <h2 class="popup__title">Новое место</h2>
@@ -67,8 +67,8 @@
       </form>
     </div>
   </div>
-  <div class="popup popup_card_photo">
-    <div class="popup__container-photo">
+  <div class="popup popup_type_card-photo">
+    <div class="popup__container popup__container_card_photo">
       <button type="button" class="popup__close popup__close_card_photo"></button>
       <figure class="popup__photo">
         <img class="popup__img" src="#" alt="Фото">
@@ -76,7 +76,7 @@
       </figure>
     </div>
   </div>
-  <script defer src="./scripts/index.js"></script>
+  <script defer src="./scripts/index.js" type="module"></script>
 </body>
 
 </html>
