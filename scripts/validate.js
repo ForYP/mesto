@@ -13,7 +13,6 @@ function enableValidation (config) {
     formList.forEach(form => {
       form.addEventListener('submit', function (event) {
         event.preventDefault();
-        form.reset();
         toggleButtonValidity(config, form);
       })
       setEventListeners(config, form);
