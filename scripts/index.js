@@ -111,6 +111,7 @@ const handleEditCardSubmit = (event) => {
   };
   renderCardElementPrepend(createCardElement(cardData));
   closePopup(popupCard);
+  event.target.reset();
 }
 
 editCardForm.addEventListener('submit', handleEditCardSubmit);
