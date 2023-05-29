@@ -1,13 +1,4 @@
-const config = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__input-save',
-    inactiveButtonClass: 'popup__input-disabled',
-    inputErrorClass: 'popup__input_invalid',
-    errorClass: 'popup__error-message'
-} 
-
-class FormValidator {
+export default class FormValidator {
   constructor (config, form) {
     this._formSelector = config.formSelector;
     this._inputSelector = config.inputSelector;
@@ -21,11 +12,6 @@ class FormValidator {
 
   // включает валидацию всех форм
   enableValidation () {
-    this._form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      this._toggleButtonValidity();
-    })
-  
     this._setEventListeners();
   }
   
@@ -54,9 +40,9 @@ class FormValidator {
   // меняет отображение кнопки submit
   _toggleButtonValidity () {
     if (this._form.checkValidity()) {
-      this._enableButton(this._submitButton)
+      this._enableButton()
     } else {
-      this._disableButton(this._submitButton)
+      this._disableButton()
     }
   }
 
@@ -83,5 +69,3 @@ class FormValidator {
     });
   }
 }
-
-export {FormValidator, config};

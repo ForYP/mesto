@@ -1,6 +1,6 @@
-import initialCards from './content.js';
+import {initialCards, config} from './content.js';
 import Card from './Card.js';
-import {FormValidator, config} from './FormValidator.js'
+import FormValidator from './FormValidator.js'
 
 const closesAllOverlayPopup = document.querySelectorAll('.popup'); 
 const editButton = document.querySelector('.profile__edit-button');
@@ -80,18 +80,22 @@ function handlePhotoCardsClick (name, link) {
 buttonAddCard.addEventListener('click', () => {
     openPopup(popupCard);
 });
-
-function createCardElement (cardData) {
-  const cardElement = new Card(cardData, '#card-template', handlePhotoCardsClick);
-  renderCardElement(cardElement.generateCard());
-  return cardElement
+const createCardElement = (cardData) => {
+  const newCard = new Card(cardData, '#card-template', handlePhotoCardsClick);
+  return newCard.generateCard();
 }
 
 function renderCardElement (cardElement) {
-  cardElements.prepend(cardElement);
+    cardElements.prepend(cardElement);
+  }
+
+function renderCardElementAdd  (cardElement) {
+  cardElements.append(cardElement);
 }
 
-initialCards.forEach(createCardElement);
+initialCards.forEach(cardData => {
+  renderCardElementAdd(createCardElement(cardData));
+})
 
 const handleEditCardSubmit = (event) => {
   event.preventDefault();
@@ -101,7 +105,8 @@ const handleEditCardSubmit = (event) => {
     name,
     link,
   };
-  createCardElement(cardData);
+  // createCardElement(cardData);
+  renderCardElement(createCardElement(cardData));
   event.target.reset();
   closePopup(popupCard);
 }
@@ -113,5 +118,6 @@ editCardForm.addEventListener('submit', handleEditCardSubmit);
 const profileFormValidator  = new FormValidator(config, editPopupForm);
 const cardFormValidator  = new FormValidator(config, editCardForm);
 
-profileFormValidator .enableValidation(config);
-cardFormValidator .enableValidation(config);
+profileFormValidator.enableValidation();
+cardFormValidator.enableValidation();
+
