@@ -120,4 +120,3 @@ const cardFormValidator  = new FormValidator(config, editCardForm);
 
 profileFormValidator.enableValidation();
 cardFormValidator.enableValidation();
-
