@@ -42,12 +42,12 @@ export default class FormValidator {
     if (this._form.checkValidity()) {
       this._enableButton()
     } else {
-      this._disableButton()
+      this.disableButton()
     }
   }
 
   // передает состояние неактивной кнопки
-  _disableButton () {
+  disableButton () {
     this._submitButton.classList.add(this._inactiveButtonClass);
     this._submitButton.setAttribute('disabled', '');
   }
