@@ -20,7 +20,7 @@ import {
 const userInfo = new UserInfo({
   profileName: '.profile__name',
   profileStatus: '.profile__status',
-  avatar: 'profile__avatar',
+  avatarLink: '.profile__avatar',
 });
 
 const popupImage = new PopupWithImage('.popup_type_card-photo');
@@ -45,16 +45,16 @@ const popupProfile = new PopupWithForm({
   }
 });
 //-----------
-const popupAvatarEdit = new PopupWithForm({
-  popupSelector: '.popup_type_edit-avatar',
-  handleFormSubmit: (input) => {
-    userInfo.setUserAvatar(input.link);
-    profileFormValidator.disableButton();
-  }
+
+const popupAvatarEdit = new PopupWithForm({ 
+  popupSelector: '.popup_type_edit-avatar', 
+  handleFormSubmit: (input) => { 
+    userInfo.setUserAvatar(input);
+    profileFormValidator.disableButton(); 
+  }, 
 });
 
 function editAvatar() {
-  // inputLink.value = '';
   popupAvatarEdit.open();
 }
 
