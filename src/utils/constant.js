@@ -4,3 +4,5 @@ export  const formCard = document.querySelector('.popup__form_type_submit');
 export  const addButton = document.querySelector('.profile__add-button');
 export  const inputName = document.querySelector('.popup__input_type_name');
 export  const inputStatus = document.querySelector('.popup__input_type_status');
+export  const buttonOpenPopupAvatar = document.querySelector('.profile__avatar-container');
+export  const inputLink = document.querySelector('#avatar-link');

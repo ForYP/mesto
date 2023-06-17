@@ -16,7 +16,10 @@
     <main class="content">
       <section class="profile">
         <div class="profile__main">
-          <img src="<%=require('./images/avatar.png')%>" alt="аватар" class="profile__avatar">
+          <div class="profile__avatar-container">
+            <img src="#" alt="аватар" class="profile__avatar">
+            <img src="<%=require('./images/edit-avatar.svg')%>" alt="Редактировать профиль" class="profile__edit-avatar" >
+          </div>  
           <div class="profile__info">
             <div class="profile__united">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -43,6 +46,17 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
+  </div>
+  <div class="popup popup_type_edit-avatar">
+    <div class="popup__container">
+      <button type="button" class="popup__close"></button>
+      <h2 class="popup__title">Обновить аватар</h2>
+      <form name="addCard" class="popup__form popup__form_type_submit" novalidate>
+        <input id="avatar-link" type="url" name="link" class="popup__input popup__input_type_link" placeholder="Ссылка на картинку" required>
+        <span id="error-avatar-link" class="popup__error-message"></span>
+        <button type="submit" class="popup__input-save popup__input-disabled" disabled>Сохранить</button>
+      </form>
+    </div>
   </div>
   <div class="popup popup_type_edit-profile">
     <div class="popup__container">

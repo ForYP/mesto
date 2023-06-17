@@ -12,12 +12,15 @@ import {
   formCard,
   addButton,
   inputName,
-  inputStatus
+  inputStatus,
+  buttonOpenPopupAvatar,
+  inputLink
 } from '../utils/constant.js';
 
 const userInfo = new UserInfo({
   profileName: '.profile__name',
   profileStatus: '.profile__status',
+  avatar: 'profile__avatar',
 });
 
 const popupImage = new PopupWithImage('.popup_type_card-photo');
@@ -41,6 +44,19 @@ const popupProfile = new PopupWithForm({
    profileFormValidator.disableButton();
   }
 });
+//-----------
+const popupAvatarEdit = new PopupWithForm({
+  popupSelector: '.popup_type_edit-avatar',
+  handleFormSubmit: (input) => {
+    userInfo.setUserAvatar(input.link);
+    profileFormValidator.disableButton();
+  }
+});
+
+function editAvatar() {
+  // inputLink.value = '';
+  popupAvatarEdit.open();
+}
 
 function editProfile() {
   popupProfile.open();
@@ -53,9 +69,11 @@ function addCard() {
   popupAddCard.open();
 }
 
+buttonOpenPopupAvatar.addEventListener('click', editAvatar);
 editButton.addEventListener('click', editProfile, config);
 addButton.addEventListener('click', addCard, config);
 
+popupAvatarEdit.setEventListeners();
 popupAddCard.setEventListeners();
 popupProfile.setEventListeners();
 popupImage.setEventListeners();
