@@ -37,7 +37,10 @@
             <img src="#" alt="изображение" class="element__photo">
             <div class="element__description">
               <h2 class="element__title"></h2>
-              <button type="button" class="element__like"></button>
+              <div class="element__like-container">
+                <button type="button" class="element__like"></button>
+                <p class="element__reaction-counter">0</p>  
+              </div>
             </div>
           </article>
         </template>
@@ -51,7 +54,7 @@
     <div class="popup__container">
       <button type="button" class="popup__close"></button>
       <h2 class="popup__title">Обновить аватар</h2>
-      <form name="addCard" class="popup__form popup__form_type_submit" novalidate>
+      <form name="profileAvatar" class="popup__form popup__form_avatar_submit" novalidate>
         <input id="avatar-link" type="url" name="link" class="popup__input popup__input_type_link" placeholder="Ссылка на картинку" required>
         <span id="error-avatar-link" class="popup__error-message"></span>
         <button type="submit" class="popup__input-save popup__input-disabled" disabled>Сохранить</button>
@@ -67,7 +70,7 @@
         <span id="error-profile-name" class="popup__error-message"></span>
         <input type="text" id="profile-status" name="status" minlength="2" maxlength="200" class="popup__input popup__input_type_status" placeholder="О себе" required>
         <span id="error-profile-status" class="popup__error-message"></span>
-        <button type="submit" class="popup__input-save">Сохранить</button>
+        <button type="submit" class="popup__input-save popup__input-disabled" disabled>Сохранить</button>
       </form>
     </div>
   </div>
@@ -91,6 +94,15 @@
         <img class="popup__img" src="#" alt="Фото">
         <figcaption class="popup__figcaption"></figcaption>
       </figure>
+    </div>
+  </div>
+  <div class="popup popup_type_remove-card">
+    <div class="popup__container">
+      <button type="button" class="popup__close"></button>
+      <form name="deleteCard" class="popup__form popup__form_avatar_submit" novalidate>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <button type="submit" class="popup__input-save popup__input-delete">Да</button>
+    </form>
     </div>
   </div>
 </body>
