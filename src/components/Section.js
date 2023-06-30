@@ -13,4 +13,8 @@
     addItem(elem) {
         this._container.prepend(elem);
     }
+
+    addItemTop(elem){
+        this._container.append(elem);
+    }
 }
