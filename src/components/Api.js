@@ -4,81 +4,83 @@ class Api {
   constructor(config) {
     this._url = config.url;
     this._headers = config.headers; 
-    this._authorization = config.headers.authorization; // токен
+    this._authorization = config.headers.authorization;
   }
 
+  _checkResponse(res) {
+    if (res.ok) {
+        return res.json();
+    }
+    return Promise.reject(`Ошибка: ${res.status}`);
+  }
+
+  _request(url, options) {
+    return fetch(url, options).then(this._checkResponse)
+  }
+
+
   getInitialCards () {
-    return fetch(`${this._url}/cards`, {
+    return this._request(`${this._url}/cards`, {
       headers: this._headers,
-    }).then(res => res.json());
+    })
   }
 
   getUserInfo () {
-    return fetch(`${this._url}/users/me`, {
+    return this._request(`${this._url}/users/me`, {
       headers: this._headers,
-    }).then(res => res.json());
+    })
   }
 
   updateUserInfo(item) {
-    return fetch(`${this._url}/users/me`, {
+    return this._request(`${this._url}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
         name: item.name,
         about: item.about,
       }),
-    }).then(res => res.json()); // краткая запись 
+    })
   }
 
   updateAvatar(newUrl) {
-    return fetch(`${this._url}/users/me/avatar`, {
+    return this._request(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
         avatar: newUrl
       })
-    }).then((res) => {
-      return res.json()
     })
   }
 
   updateCards(name, link) {
-    return fetch(`${this._url}/cards`, {
+    return this._request(`${this._url}/cards`, {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
         name: name,
         link: link,
       })
-    }).then((res) => {
-      return res.json()
     })
   }
 
   deleteCardApi(cardId) {
-    return fetch(`${this._url}/cards/${cardId}`, {
+    return this._request(`${this._url}/cards/${cardId}`, {
       method: 'DELETE',
       headers: this._headers,
-    }).then((res) => {
-      return res.json()
     })
   }
 
   putCardLike (cardId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
+    return this._request(`${this._url}/cards/${cardId}/likes`, {
       method: 'PUT',
       headers: this._headers,
-    }).then((res) => {
-      return res.json()
     })
   }
   
   deleteCardLike (cardId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
+    return this._request(`${this._url}/cards/${cardId}/likes`, {
       method: 'DELETE',
       headers: this._headers,
-    }).then((res) => {
-      return res.json()
     })
   }
 }

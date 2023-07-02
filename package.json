@@ -1,7 +1,7 @@
 {
   "name": "mesto",
   "version": "1.0.0",
-  "description": "**Сдача проекта Mesto: рефакторинг и сборка Вебпаком**",
+  "description": "**Сдача проекта Mesto: подключение к серверу**",
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack --mode production",
