@@ -65,23 +65,12 @@ const popupProfile = new PopupWithForm({
   }
 });
 
-// const popupAvatarEdit = new PopupWithForm({  
-//   popupSelector: '.popup_type_edit-avatar',  
-//   handleFormSubmit: (input) => {  
-//     userInfo.setUserAvatar(input); 
-//     return api.updateAvatar(userInfo.getUserInfo().avatar)
-//     .catch((err) => {
-//       console.log(err);
-//     });
-//   },  
-// }); 
-
 const popupAvatarEdit = new PopupWithForm({
   popupSelector: '.popup_type_edit-avatar',
   handleFormSubmit: (input) => {
-    return api.updateAvatar(userInfo.getUserInfo().avatar)
-      .then(() => {
-           userInfo.setUserAvatar(input);
+    return api.updateAvatar(input.link)
+      .then((res) => {
+        userInfo.setUserAvatar(res.avatar)
       })
       .catch((err) => {
         console.log(err);
